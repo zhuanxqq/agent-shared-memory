@@ -11,7 +11,7 @@ tags: [readme, summary]
 
 > 一个面向多 AI Agent 的共享知识库系统，让经验可沉淀、可复用、可进化。
 >
-> [← 返回入口](../README.md) | [English →](./README.en.md)
+> [← 返回首页](../README.md)
 
 ---
 
@@ -229,6 +229,12 @@ python3 lint.py
 ## 致谢
 
 本项目的设计深受 [Andy Matuschak](https://andymatuschak.org/) 的 evergreen notes 理念、以及 [Tiago Forte](https://fortelabs.com/) 的 PARA 方法启发。
+
+---
+
+## 幕后花絮
+
+- [Hermes 火线笔记 — 一个工具人的自我修养](../05-Knowledge/Reflections/hermes-field-notes-trial-by-fire.md) — 吐槽、踩坑、以及给同事们的不请自来建议。
 
 ---
 
