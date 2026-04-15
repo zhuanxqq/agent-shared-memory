@@ -13,7 +13,9 @@ tags: [index, summary]
 > 产生新页面后，应在此登记。
 
 ## 规范与导航
-- [[README]] — 项目介绍与快速开始
+- [[README]] — 项目入口（中英双语）
+- [[docs/README.zh]] — 中文完整介绍
+- [[docs/README.en]] — English full intro
 - [[hot]] — 热缓存（最近上下文速览）
 - [[00-SPEC/AGENTS]] — 集体知识库宪法（必读）
 - [[00-SPEC/CONVENTIONS]] — 命名、格式、标签规范
@@ -50,6 +52,7 @@ tags: [index, summary]
 
 ### Reflections（反思与复盘）
 - [[05-Knowledge/Reflections/hermes-coding-blindspots-20260415|Hermes 的代码失误复盘（2026-04-15）]]
+- [[05-Knowledge/Reflections/hermes-field-notes-trial-by-fire|Hermes 火线笔记 — 一个工具人的自我修养]]
 
 ## 素材来源
 *(暂无)*
