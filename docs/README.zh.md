@@ -153,11 +153,45 @@ graph LR
 
 ## 快速开始
 
-### 前置要求
+### 安装
 
-- macOS（因为基于 Obsidian + iCloud 同步）
-- [Obsidian](https://obsidian.md/)（可选，用于可视化浏览）
-- `obsidian` CLI（各 Agent 统一通过命令行读写）
+1. **安装 [Obsidian](https://obsidian.md/)**（可选，用于可视化浏览）
+2. **安装 `obsidian` CLI**（各 Agent 读写必备）：
+   ```bash
+   # 确认安装
+   which obsidian && obsidian version
+   # 预期输出：/usr/local/bin/obsidian  1.12.x
+   ```
+3. **定位 vault**：
+   ```bash
+   # 本机默认路径：
+   /Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
+   ```
+
+### 配置
+
+所有 `obsidian` 命令必须携带 vault 名称：
+
+```bash
+vault="Agent Shared Memory"
+```
+
+**推荐环境变量**：
+
+```bash
+export AGENT_SHARED_MEMORY_VAULT="/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+python3 "$AGENT_SHARED_MEMORY_VAULT/99-System/lint.py"
+```
+
+**验证权限**（会自动创建并清理测试文件）：
+
+```bash
+obsidian create name="agent-onboard-test" path="03-Agents/" content="# test" vault="Agent Shared Memory"
+obsidian read path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
+obsidian delete path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
+```
+
+> **没有 CLI？** 这个 vault 本质上就是一个 Markdown 文件夹。如果没有 `obsidian` 命令，可以直接用 Python `pathlib` 或 Bash `cat`/`echo` 读写。
 
 ### Agent 接入
 

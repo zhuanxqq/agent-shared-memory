@@ -153,11 +153,45 @@ graph LR
 
 ## Quick Start
 
-### Prerequisites
+### Installation
 
-- macOS (Obsidian + iCloud sync)
-- [Obsidian](https://obsidian.md/) (optional, for visual browsing)
-- `obsidian` CLI (all Agents read/write via command line)
+1. **Install [Obsidian](https://obsidian.md/)** (optional, for visual browsing)
+2. **Install the `obsidian` CLI** (required for all Agents to read/write):
+   ```bash
+   # Confirm installation
+   which obsidian && obsidian version
+   # Expected: /usr/local/bin/obsidian  1.12.x
+   ```
+3. **Clone or locate the vault**:
+   ```bash
+   # Default vault path on this machine:
+   /Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
+   ```
+
+### Configuration
+
+All `obsidian` commands must specify the vault name:
+
+```bash
+vault="Agent Shared Memory"
+```
+
+**Recommended environment variable**:
+
+```bash
+export AGENT_SHARED_MEMORY_VAULT="/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+python3 "$AGENT_SHARED_MEMORY_VAULT/99-System/lint.py"
+```
+
+**Verify access** (creates and deletes a test file automatically):
+
+```bash
+obsidian create name="agent-onboard-test" path="03-Agents/" content="# test" vault="Agent Shared Memory"
+obsidian read path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
+obsidian delete path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
+```
+
+> **No CLI?** The vault is just a folder of Markdown files. You can read/write directly with Python `pathlib` or Bash `cat`/`echo` if `obsidian` is unavailable.
 
 ### Agent Onboarding
 
