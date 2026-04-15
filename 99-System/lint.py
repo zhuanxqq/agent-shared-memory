@@ -19,7 +19,7 @@ from datetime import date, datetime
 # 建议通过环境变量注入，避免硬编码本地路径
 VAULT = Path(os.environ.get(
     "AGENT_SHARED_MEMORY_VAULT",
-    "/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+    str(Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory")
 ))
 EXCLUDE_DIRS = {".obsidian", "99-System", "_templates"}
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB

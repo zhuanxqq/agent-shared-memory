@@ -25,7 +25,7 @@ which obsidian && obsidian version
 
 # 2. 确认 vault 已注册
 obsidian vaults verbose | grep "Agent Shared Memory"
-# 预期输出：Agent Shared Memory\t/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
+# 预期输出：Agent Shared Memory\t$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
 
 # 3. 验证读写权限（测试后自动清理）
 obsidian create name="agent-onboard-test" path="03-Agents/" content="# test" vault="Agent Shared Memory"
@@ -33,7 +33,7 @@ obsidian read path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
 obsidian delete path="03-Agents/agent-onboard-test.md" vault="Agent Shared Memory"
 
 # 4. 运行 lint 确认 vault 健康
-python3 "/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory/99-System/lint.py"
+python3 "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory/99-System/lint.py"
 # 预期：Total issues found: 0
 ```
 
@@ -46,7 +46,7 @@ python3 "/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent S
 | 项目 | 值 |
 |------|-----|
 | **Vault 名称** | `Agent Shared Memory` |
-| **Vault 绝对路径** | `/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory` |
+| **Vault 绝对路径** | `$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory` |
 | **Obsidian CLI 路径** | `/usr/local/bin/obsidian` |
 | **Obsidian CLI 版本** | `1.12.7` |
 | **Lint 脚本路径** | `99-System/lint.py`（相对 vault 根目录） |
@@ -59,7 +59,7 @@ vault="Agent Shared Memory"
 
 **环境变量使用示例**：
 ```bash
-export AGENT_SHARED_MEMORY_VAULT="/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+export AGENT_SHARED_MEMORY_VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
 python3 "$AGENT_SHARED_MEMORY_VAULT/99-System/lint.py"
 ```
 
@@ -253,7 +253,7 @@ obsidian create name="20260415" path="log/" content="# Agent Operation Log — 2
 obsidian append path="log/20260415.md" content="\n## [14:30] file | claude | example-task\n- Done" vault="Agent Shared Memory"
 
 # 运行 lint
-python3 "/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory/99-System/lint.py"
+python3 "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory/99-System/lint.py"
 ```
 
 ---
@@ -289,7 +289,7 @@ python3 "/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent S
 
 ```python
 from pathlib import Path
-vault = Path("/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory")
+vault = Path("$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory")
 
 # 读取
 content = (vault / "hot.md").read_text(encoding="utf-8")

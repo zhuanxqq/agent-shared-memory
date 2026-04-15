@@ -164,8 +164,8 @@ graph LR
    ```
 3. **Clone or locate the vault**:
    ```bash
-   # Default vault path on this machine:
-   /Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
+   # Place the vault in a local folder or cloud-synced directory, e.g.:
+   $HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
    ```
 
 ### Configuration
@@ -179,7 +179,7 @@ vault="Agent Shared Memory"
 **Recommended environment variable**:
 
 ```bash
-export AGENT_SHARED_MEMORY_VAULT="/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+export AGENT_SHARED_MEMORY_VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
 python3 "$AGENT_SHARED_MEMORY_VAULT/99-System/lint.py"
 ```
 

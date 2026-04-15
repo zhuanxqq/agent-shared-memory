@@ -164,8 +164,8 @@ graph LR
    ```
 3. **定位 vault**：
    ```bash
-   # 本机默认路径：
-   /Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
+   # 将 vault 放在本地文件夹或云同步目录，例如：
+   $HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory
    ```
 
 ### 配置
@@ -179,7 +179,7 @@ vault="Agent Shared Memory"
 **推荐环境变量**：
 
 ```bash
-export AGENT_SHARED_MEMORY_VAULT="/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
+export AGENT_SHARED_MEMORY_VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory"
 python3 "$AGENT_SHARED_MEMORY_VAULT/99-System/lint.py"
 ```
 

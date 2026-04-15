@@ -20,7 +20,7 @@ tags: [spec, protocol, onboarding]
 
 ## 共享知识库路径
 
-`/Users/hl/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory`
+`$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Agent Shared Memory`
 
 ## 你的接入方式
 

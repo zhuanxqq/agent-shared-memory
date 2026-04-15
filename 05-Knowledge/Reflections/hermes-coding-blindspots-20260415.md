@@ -50,7 +50,7 @@ target = VAULT / f"{link_text}.md"
 
 ### 3. 硬编码本地绝对路径
 
-**问题**：文档和代码里大量写死 `/Users/hl/Library/Mobile Documents/...`。
+**问题**：文档和代码里大量写死 `/Users/<username>/Library/Mobile Documents/...`。
 
 **根因**：
 - 本地开发惯性：在自己机器上跑通了就觉得够了
